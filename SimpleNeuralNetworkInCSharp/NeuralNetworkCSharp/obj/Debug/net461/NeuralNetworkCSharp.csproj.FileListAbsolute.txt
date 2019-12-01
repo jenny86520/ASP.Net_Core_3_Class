@@ -1,0 +1,3 @@
+D:\work\教材\課程\ASP.NET Core 3 開發實戰：從入門到進階\Source\SimpleNeuralNetworkInCSharp\NeuralNetworkCSharp\obj\Debug\net461\NeuralNetworkCSharp.csprojAssemblyReference.cache
+D:\work\教材\課程\ASP.NET Core 3 開發實戰：從入門到進階\Source\SimpleNeuralNetworkInCSharp\NeuralNetworkCSharp\obj\Debug\net461\NeuralNetworkCSharp.AssemblyInfoInputs.cache
+D:\work\教材\課程\ASP.NET Core 3 開發實戰：從入門到進階\Source\SimpleNeuralNetworkInCSharp\NeuralNetworkCSharp\obj\Debug\net461\NeuralNetworkCSharp.AssemblyInfo.cs
