@@ -1,0 +1,7 @@
+D:\work\教材\課程\ASP.NET Core 3 開發實戰：從入門到進階\Source\solution1\classlib1\bin\Debug\net472\classlib1.dll
+D:\work\教材\課程\ASP.NET Core 3 開發實戰：從入門到進階\Source\solution1\classlib1\bin\Debug\net472\classlib1.pdb
+D:\work\教材\課程\ASP.NET Core 3 開發實戰：從入門到進階\Source\solution1\classlib1\obj\Debug\net472\classlib1.csprojAssemblyReference.cache
+D:\work\教材\課程\ASP.NET Core 3 開發實戰：從入門到進階\Source\solution1\classlib1\obj\Debug\net472\classlib1.AssemblyInfoInputs.cache
+D:\work\教材\課程\ASP.NET Core 3 開發實戰：從入門到進階\Source\solution1\classlib1\obj\Debug\net472\classlib1.AssemblyInfo.cs
+D:\work\教材\課程\ASP.NET Core 3 開發實戰：從入門到進階\Source\solution1\classlib1\obj\Debug\net472\classlib1.dll
+D:\work\教材\課程\ASP.NET Core 3 開發實戰：從入門到進階\Source\solution1\classlib1\obj\Debug\net472\classlib1.pdb

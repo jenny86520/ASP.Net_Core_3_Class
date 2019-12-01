@@ -8,10 +8,12 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Package Description</description>
     <dependencies>
+      <group targetFramework=".NETFramework4.7.2" />
       <group targetFramework=".NETStandard2.0" />
     </dependencies>
   </metadata>
   <files>
+    <file src="D:\work\教材\課程\ASP.NET Core 3 開發實戰：從入門到進階\Source\solution1\classlib1\bin\Debug\net472\classlib1.dll" target="lib\net472\classlib1.dll" />
     <file src="D:\work\教材\課程\ASP.NET Core 3 開發實戰：從入門到進階\Source\solution1\classlib1\bin\Debug\netstandard2.0\classlib1.dll" target="lib\netstandard2.0\classlib1.dll" />
   </files>
 </package>

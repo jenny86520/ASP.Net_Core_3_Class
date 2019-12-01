@@ -1,6 +1,7 @@
 {
   "version": 3,
   "targets": {
+    ".NETFramework,Version=v4.7.2": {},
     ".NETStandard,Version=v2.0": {
       "Microsoft.NETCore.Platforms/1.1.0": {
         "type": "package",
@@ -174,6 +175,7 @@
     }
   },
   "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7.2": [],
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3"
     ]
@@ -191,6 +193,7 @@
       "packagesPath": "D:\\Users\\赤蜻\\.nuget\\packages\\",
       "outputPath": "D:\\work\\教材\\課程\\ASP.NET Core 3 開發實戰：從入門到進階\\Source\\solution1\\classlib1\\obj\\",
       "projectStyle": "PackageReference",
+      "crossTargeting": true,
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
@@ -199,6 +202,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
+        "net472",
         "netstandard2.0"
       ],
       "sources": {
@@ -206,6 +210,9 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
+        "net472": {
+          "projectReferences": {}
+        },
         "netstandard2.0": {
           "projectReferences": {}
         }
@@ -217,6 +224,9 @@
       }
     },
     "frameworks": {
+      "net472": {
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.101\\RuntimeIdentifierGraph.json"
+      },
       "netstandard2.0": {
         "dependencies": {
           "NETStandard.Library": {
