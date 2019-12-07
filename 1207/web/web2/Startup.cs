@@ -29,6 +29,8 @@ namespace web2
         {
             // for MVC: 註冊 Controllers & Views 類別(type)，使其成為服務
             services.AddControllersWithViews();
+            /** Class-1207: 練習設定組態並注入 IOptionsSnapshot<T> 物件 */
+            services.Configure<Profile>(Configuration.GetSection("Profile"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

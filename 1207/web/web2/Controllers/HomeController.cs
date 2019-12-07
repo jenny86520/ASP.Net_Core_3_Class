@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using web2.Models;
 
 namespace web2.Controllers
@@ -12,15 +13,17 @@ namespace web2.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly Profile _profile;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IOptionsSnapshot<Profile> profile)
         {
             _logger = logger;
+            _profile = profile.Value;   // Class-1207: 練習設定組態並注入 IOptionsSnapshot<T> 物件
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(_profile);
         }
 
         public IActionResult Privacy()

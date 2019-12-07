@@ -1,4 +1,7 @@
-﻿@{
+﻿ <!-- Class-1207: 練習設定組態並注入 IOptionsSnapshot<T> 物件 -->
+@model Profile
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,3 +9,8 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<ul>
+    <li>Name: @Model.Name </li>
+    <li>Phone: @Model.Phone</li>
+</ul>
