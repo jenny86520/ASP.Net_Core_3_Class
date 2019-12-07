@@ -7,11 +7,17 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Configuration;
 
 namespace web1
 {
     public class Startup
     {
+        private readonly IConfiguration _config;
+        public Startup(IConfiguration config)
+        {
+            _config = config;
+        }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         /// <summary>
@@ -21,9 +27,16 @@ namespace web1
         public void ConfigureServices(IServiceCollection services)
         {
             /** Class-1207: 練習用 DI 注入物件到其他服務中 */
-            services.AddSingleton<HelloWorldMessage>(new HelloWorldMessage(){
-                Message = "***Hello World***"
-            });
+            // services.AddSingleton<HelloWorldMessage>(new HelloWorldMessage(){
+            //     Message = "***Hello World***"
+            // });
+            /** Class-1207: 從組態提供者取得參數 */
+            // services.Configure<HelloWorldMessage>((HelloWorldMsg) =>
+            // {
+            //     HelloWorldMsg.Message = "***Hello World***";
+            // });
+            /** Class-1207: 練習讀取組態物件 */
+            services.Configure<HelloWorldMessage>(_config.GetSection("Message"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

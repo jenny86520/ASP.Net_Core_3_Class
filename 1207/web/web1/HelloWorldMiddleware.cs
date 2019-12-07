@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Options;
 
 namespace web1
 {
@@ -17,14 +18,18 @@ namespace web1
     public class HelloWorldMiddleware
     {
         private readonly RequestDelegate _next;
-        private HelloWorldMessage _helloWorldMsg;
-
+        private readonly HelloWorldMessage _helloWorldMsg;
+        private readonly HelloWorldMessage _ihelloWorldMsg;
 
         // "Scoped" SERVICE SHOULDN'T DO CONSTRUCTOR DI!!
-        public HelloWorldMiddleware(RequestDelegate next, HelloWorldMessage helloWorldMsg)
+        public HelloWorldMiddleware(RequestDelegate next,
+        HelloWorldMessage helloWorldMsg,
+        IOptions<HelloWorldMessage> ihelloWorldMsg
+        )
         {
             _next = next;
             _helloWorldMsg = helloWorldMsg; // Class-1207: 練習用 DI 注入物件到其他服務中
+            _ihelloWorldMsg = ihelloWorldMsg.Value; // Class-1207: 從組態提供者取得參數
         }
         public async Task InvokeAsync(HttpContext context)
         {
@@ -33,6 +38,8 @@ namespace web1
             await context.Response.WriteAsync("World");
             /** Class-1207: 練習用 DI 注入物件到其他服務中 */
             await context.Response.WriteAsync(_helloWorldMsg.Message);
+            /** Class-1207: 從組態提供者取得參數 */
+            await context.Response.WriteAsync(_ihelloWorldMsg.Message);
         }
     }
 }
