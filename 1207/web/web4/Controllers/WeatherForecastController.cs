@@ -22,7 +22,10 @@ namespace web4.Controllers
         {
             _logger = logger;
         }
-
+        /// <summary>
+        /// HttpGet
+        /// </summary>
+        /// <returns>IEnumerable: 自動轉型成 json</returns>
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
@@ -35,5 +38,22 @@ namespace web4.Controllers
             })
             .ToArray();
         }
+        /// <summary>
+        /// HttpGet NoJson(不使用 IEnumerable)
+        /// </summary>
+        /// <returns>WeatherForecast</returns>
+        [HttpGet("NoJson")]
+        public WeatherForecast GetNoJson()
+        {
+            var rng = new Random();
+            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            {
+                Date = DateTime.Now.AddDays(index),
+                TemperatureC = rng.Next(-20, 55),
+                Summary = Summaries[rng.Next(Summaries.Length)]
+            })
+            .ToArray()[0];
+        }
+
     }
 }
