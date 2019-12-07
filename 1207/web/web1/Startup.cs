@@ -20,6 +20,10 @@ namespace web1
         /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
+            /** Class-1207: 練習用 DI 注入物件到其他服務中 */
+            services.AddSingleton<HelloWorldMessage>(new HelloWorldMessage(){
+                Message = "***Hello World***"
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

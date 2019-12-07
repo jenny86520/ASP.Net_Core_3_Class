@@ -17,17 +17,22 @@ namespace web1
     public class HelloWorldMiddleware
     {
         private readonly RequestDelegate _next;
+        private HelloWorldMessage _helloWorldMsg;
+
 
         // "Scoped" SERVICE SHOULDN'T DO CONSTRUCTOR DI!!
-        public HelloWorldMiddleware(RequestDelegate next)
+        public HelloWorldMiddleware(RequestDelegate next, HelloWorldMessage helloWorldMsg)
         {
             _next = next;
+            _helloWorldMsg = helloWorldMsg; // Class-1207: 練習用 DI 注入物件到其他服務中
         }
         public async Task InvokeAsync(HttpContext context)
         {
             await context.Response.WriteAsync("Hello");
             await _next(context);
             await context.Response.WriteAsync("World");
+            /** Class-1207: 練習用 DI 注入物件到其他服務中 */
+            await context.Response.WriteAsync(_helloWorldMsg.Message);
         }
     }
 }
