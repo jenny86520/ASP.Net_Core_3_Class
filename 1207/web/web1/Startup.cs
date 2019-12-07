@@ -31,6 +31,7 @@ namespace web1
         /// <param name="env"></param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            /** 初始 */
             // 裝載的環境(預設 Development，設定環境變數就可更改(set ASPNETCORE_ENVIRONMENT=Production，會與 launch.json 衝突)
             if (env.IsDevelopment())
             {
@@ -48,6 +49,50 @@ namespace web1
                     await context.Response.WriteAsync("Hello World!");
                 });
             });
+
+            /** Class-1207: 練習基本 Middleware 設計 - 1 
+             * >Hello aka World<
+            */
+            app.Use(async (context, next) =>
+            {
+                await context.Response.WriteAsync("=練習基本 Middleware 設計 - 1=\n");
+                await next();
+                await context.Response.WriteAsync("\n");
+            });
+            app.Use(async (context, next) =>
+            {
+                await context.Response.WriteAsync(">");
+                await next();
+                await context.Response.WriteAsync("<");
+            });
+            app.Use(async (context, next) =>
+            {
+                await context.Response.WriteAsync("Hello");
+                await next();
+                await context.Response.WriteAsync("World");
+            });
+            app.Run(async (context) =>
+            {
+                await context.Response.WriteAsync(" aka ");
+            });
+            /** Class-1207: 練習基本 Middleware 設計 - 2 
+             * Hello aka World
+            */
+            // 自訂 Middleware
+            app.UseMiddleware<HelloWorldMiddleware>();
+            app.Run(async (context) =>
+            {
+                await context.Response.WriteAsync(" aka ");
+            });
+            /** Class-1207: 練習基本 Middleware 設計 - 3
+             * Hello aka World
+            */
+            app.UseHelloWorld();
+            app.Run(async (context) =>
+            {
+                await context.Response.WriteAsync(" aka ");
+            });
+
         }
     }
 }

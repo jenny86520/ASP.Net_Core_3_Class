@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\work\\教材\\課程\\ASP.NET Core 3 開發實戰：從入門到進階\\Source\\1207\\web\\web1\\web1.csproj": {}
+    "D:\\work\\教材\\課程\\ASP.NET Core 3 開發實戰：從入門到進階\\Source\\1207\\web\\web1\\web1.csproj": {}
   },
   "projects": {
-    "d:\\work\\教材\\課程\\ASP.NET Core 3 開發實戰：從入門到進階\\Source\\1207\\web\\web1\\web1.csproj": {
+    "D:\\work\\教材\\課程\\ASP.NET Core 3 開發實戰：從入門到進階\\Source\\1207\\web\\web1\\web1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\work\\教材\\課程\\ASP.NET Core 3 開發實戰：從入門到進階\\Source\\1207\\web\\web1\\web1.csproj",
+        "projectUniqueName": "D:\\work\\教材\\課程\\ASP.NET Core 3 開發實戰：從入門到進階\\Source\\1207\\web\\web1\\web1.csproj",
         "projectName": "web1",
-        "projectPath": "d:\\work\\教材\\課程\\ASP.NET Core 3 開發實戰：從入門到進階\\Source\\1207\\web\\web1\\web1.csproj",
+        "projectPath": "D:\\work\\教材\\課程\\ASP.NET Core 3 開發實戰：從入門到進階\\Source\\1207\\web\\web1\\web1.csproj",
         "packagesPath": "D:\\Users\\赤蜻\\.nuget\\packages\\",
-        "outputPath": "d:\\work\\教材\\課程\\ASP.NET Core 3 開發實戰：從入門到進階\\Source\\1207\\web\\web1\\obj\\",
+        "outputPath": "D:\\work\\教材\\課程\\ASP.NET Core 3 開發實戰：從入門到進階\\Source\\1207\\web\\web1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
