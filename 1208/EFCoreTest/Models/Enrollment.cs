@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace EFCoreTest.Models
 {
@@ -18,6 +19,7 @@ namespace EFCoreTest.Models
 
         [ForeignKey("CourseId")]
         [InverseProperty("Enrollment")]
+        [JsonIgnore] // Class-1208: 將導覽屬性放入一起回傳
         public virtual Course Course { get; set; }
         [ForeignKey("StudentId")]
         [InverseProperty("Enrollment")]

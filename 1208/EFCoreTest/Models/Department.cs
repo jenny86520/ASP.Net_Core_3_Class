@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace EFCoreTest.Models
 {
@@ -30,6 +31,7 @@ namespace EFCoreTest.Models
         [InverseProperty("Department")]
         public virtual Person Instructor { get; set; }
         [InverseProperty("Department")]
+        [JsonIgnore] // Class-1208: 將導覽屬性放入一起回傳
         public virtual ICollection<Course> Course { get; set; }
     }
 }
