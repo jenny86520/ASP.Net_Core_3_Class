@@ -105,5 +105,51 @@ namespace HW_EFCoreWebAPI.Controllers
         {
             return _context.Course.Any(e => e.CourseId == id);
         }
+
+        /** vwCourseStudents
+         * 在 CoursesController 中設計 vwCourseStudents 與 vwCourseStudentCount 檢視表的 API 輸出
+         */
+        // GET: api/Courses/Students
+        [HttpGet("Students")]
+        public async Task<ActionResult<IEnumerable<VwCourseStudents>>> GetStudents()
+        {
+            return await _context.VwCourseStudents.ToListAsync();
+        }
+        // GET: api/Courses/Students/1
+        [HttpGet("Students/{id}")]
+        public async Task<ActionResult<IEnumerable<VwCourseStudents>>> GetStudentsById(int id)
+        {
+            var student = await _context.VwCourseStudents.Where(x => x.CourseId == id).ToListAsync();
+
+            if (student == null)
+            {
+                return NotFound();
+            }
+
+            return student;
+        }
+        /** vwCourseStudentsCount
+         * 在 CoursesController 中設計 vwCourseStudents 與 vwCourseStudentCount 檢視表的 API 輸出
+         */
+        // GET: api/Courses/StudentsCount
+        [HttpGet("StudentsCount")]
+        public async Task<ActionResult<IEnumerable<VwCourseStudentCount>>> GetStudentsCount()
+        {
+            return await _context.VwCourseStudentCount.ToListAsync();
+        }
+        // GET: api/Courses/StudentsCount/1
+        [HttpGet("StudentsCount/{id}")]
+        public async Task<ActionResult<IEnumerable<VwCourseStudentCount>>> GetStudentsCountById(int id)
+        {
+            var student = await _context.VwCourseStudentCount.Where(x => x.CourseId == id).ToListAsync();
+
+            if (student == null)
+            {
+                return NotFound();
+            }
+
+            return student;
+        }
+
     }
 }
