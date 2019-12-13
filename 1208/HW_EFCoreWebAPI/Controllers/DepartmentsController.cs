@@ -7,7 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HW_EFCoreWebAPI.Models;
 
-namespace HW_EFCoreWebAPI.Controllers { 
+namespace HW_EFCoreWebAPI.Controllers
+{
 
     [Route("api/[controller]")]
     [ApiController]
@@ -24,7 +25,7 @@ namespace HW_EFCoreWebAPI.Controllers {
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Department>>> GetDepartment()
         {
-            return await _context.Department.ToListAsync();
+            return await _context.Department.Where(x => x.IsDeleted == false).ToListAsync();
         }
 
         // GET: api/Departments/5
@@ -33,7 +34,7 @@ namespace HW_EFCoreWebAPI.Controllers {
         {
             var department = await _context.Department.FindAsync(id);
 
-            if (department == null)
+            if (department == null || department.IsDeleted)
             {
                 return NotFound();
             }
@@ -94,11 +95,26 @@ namespace HW_EFCoreWebAPI.Controllers {
             {
                 return NotFound();
             }
+            department.IsDeleted = true;
+            _context.Entry(department).State = EntityState.Modified;
 
-            _context.Department.Remove(department);
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!DepartmentExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-            return department;
+            return NoContent();
         }
 
         private bool DepartmentExists(int id)

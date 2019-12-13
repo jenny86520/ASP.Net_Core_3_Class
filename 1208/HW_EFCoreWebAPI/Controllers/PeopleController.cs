@@ -24,7 +24,7 @@ namespace HW_EFCoreWebAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Person>>> GetPerson()
         {
-            return await _context.Person.ToListAsync();
+            return await _context.Person.Where(x => x.IsDeleted == false).ToListAsync();
         }
 
         // GET: api/People/5
@@ -33,7 +33,7 @@ namespace HW_EFCoreWebAPI.Controllers
         {
             var person = await _context.Person.FindAsync(id);
 
-            if (person == null)
+            if (person == null || person.IsDeleted)
             {
                 return NotFound();
             }
@@ -94,11 +94,26 @@ namespace HW_EFCoreWebAPI.Controllers
             {
                 return NotFound();
             }
+            person.IsDeleted = true;
+            _context.Entry(person).State = EntityState.Modified;
 
-            _context.Person.Remove(person);
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!PersonExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-            return person;
+            return NoContent();
         }
 
         private bool PersonExists(int id)

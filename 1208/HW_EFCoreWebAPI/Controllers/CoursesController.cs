@@ -24,7 +24,7 @@ namespace HW_EFCoreWebAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Course>>> GetCourse()
         {
-            return await _context.Course.ToListAsync();
+            return await _context.Course.Where(x => x.IsDeleted == false).ToListAsync();
         }
 
         // GET: api/Courses/5
@@ -33,7 +33,7 @@ namespace HW_EFCoreWebAPI.Controllers
         {
             var course = await _context.Course.FindAsync(id);
 
-            if (course == null)
+            if (course == null || course.IsDeleted)
             {
                 return NotFound();
             }
@@ -94,11 +94,26 @@ namespace HW_EFCoreWebAPI.Controllers
             {
                 return NotFound();
             }
+            course.IsDeleted = true;
+            _context.Entry(course).State = EntityState.Modified;
 
-            _context.Course.Remove(course);
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CourseExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-            return course;
+            return NoContent();
         }
 
         private bool CourseExists(int id)
