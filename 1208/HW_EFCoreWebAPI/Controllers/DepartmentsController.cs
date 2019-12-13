@@ -106,5 +106,30 @@ namespace HW_EFCoreWebAPI.Controllers {
             return _context.Department.Any(e => e.DepartmentId == id);
         }
 
+
+        /** vwDepartmentCourseCount
+         * 用 Raw SQL Query 的方式查詢 vwDepartmentCourseCount 檢視表的內容 
+         */
+        // GET: api/CourseCount
+        [HttpGet("CourseCount")]
+        public async Task<ActionResult<IEnumerable<VwDepartmentCourseCount>>> GetCourseCount()
+        {
+            return await _context.VwDepartmentCourseCount.FromSqlInterpolated($"select * from VwDepartmentCourseCount").ToListAsync();
+        }
+
+        // GET: api/CourseCount/5
+        [HttpGet("CourseCount/{id}")]
+        public async Task<ActionResult<IEnumerable<VwDepartmentCourseCount>>> GetCourseCountById(int id)
+        {
+            var department = await _context.VwDepartmentCourseCount.FromSqlInterpolated($"select * from VwDepartmentCourseCount where DepartmentId = {id}").ToListAsync();
+
+            if (department == null)
+            {
+                return NotFound();
+            }
+
+            return department;
+        }
+
     }
 }
