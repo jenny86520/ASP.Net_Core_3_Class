@@ -72,6 +72,49 @@ namespace HW_EFCoreWebAPI.Controllers
 
             return NoContent();
         }
+        /** Class-1214: 實作 PATCH API 更新一個實體的部分資料 
+            Patch 實作也可參考: https://benfoster.io/blog/aspnet-core-json-patch-partial-api-updates
+             */
+        // PATCH: api/Courses
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> PatchCourse(int id, Course_ course_)
+        {
+            var course = await _context.Course.FindAsync(id);
+
+            if (!await TryUpdateModelAsync(course))
+            {
+                return BadRequest();
+            }
+
+            course.Title = course_.Title;
+            course.Credits = course_.Credits;
+            course.IsDeleted = course_.IsDeleted;
+
+            if(! TryValidateModel(course))
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(course).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CourseExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
 
         // POST: api/Courses
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
