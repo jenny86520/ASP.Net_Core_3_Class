@@ -43,6 +43,11 @@ namespace HW_EFCoreWebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                /** Class-1214: 練習透過萬用的錯誤 API 回應非預期的例外結果 */
+                app.UseExceptionHandler("/error"); // TODO: Not working
+            }
 
             app.UseHttpsRedirection();
 
