@@ -1,0 +1,1511 @@
+// 20191214110355
+// https://localhost:5001/swagger/v1/swagger.json
+
+{
+  "x-generator": "NSwag v13.1.6.0 (NJsonSchema v10.0.28.0 (Newtonsoft.Json v11.0.0.0))",
+  "swagger": "2.0",
+  "info": {
+    "title": "My Title",
+    "version": "1.0.0"
+  },
+  "host": "localhost:5001",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/api/CourseInstructors": {
+      "get": {
+        "tags": [
+          "CourseInstructors"
+        ],
+        "operationId": "CourseInstructors_GetCourseInstructor",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CourseInstructor"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "CourseInstructors"
+        ],
+        "operationId": "CourseInstructors_PostCourseInstructor",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "courseInstructor",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CourseInstructor"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CourseInstructor"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CourseInstructors"
+        ],
+        "operationId": "CourseInstructors_DeleteCourseInstructor",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "courseId",
+            "in": "query",
+            "format": "int32",
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "instructorId",
+            "in": "query",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CourseInstructor"
+            }
+          }
+        }
+      }
+    },
+    "/api/CourseInstructors/Course/{id}": {
+      "get": {
+        "tags": [
+          "CourseInstructors"
+        ],
+        "operationId": "CourseInstructors_GetCourseInstructorByCourseID",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CourseInstructor"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CourseInstructors/Instructor/{id}": {
+      "get": {
+        "tags": [
+          "CourseInstructors"
+        ],
+        "operationId": "CourseInstructors_GetCourseInstructorByInstructorID",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CourseInstructor"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Courses": {
+      "get": {
+        "tags": [
+          "Courses"
+        ],
+        "operationId": "Courses_GetCourseAll",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Course"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Courses"
+        ],
+        "operationId": "Courses_PostCourse",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "course",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Course"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Course"
+            }
+          }
+        }
+      }
+    },
+    "/api/Courses/{id}": {
+      "get": {
+        "tags": [
+          "Courses"
+        ],
+        "operationId": "Courses_GetCourse",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Course"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Courses"
+        ],
+        "operationId": "Courses_PutCourse",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          },
+          {
+            "name": "course",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Course"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Courses"
+        ],
+        "operationId": "Courses_DeleteCourse",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Course"
+            }
+          }
+        }
+      }
+    },
+    "/api/Courses/Students": {
+      "get": {
+        "tags": [
+          "Courses"
+        ],
+        "operationId": "Courses_GetStudents",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/VwCourseStudents"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Courses/Students/{id}": {
+      "get": {
+        "tags": [
+          "Courses"
+        ],
+        "operationId": "Courses_GetStudentsById",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/VwCourseStudents"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Courses/StudentsCount": {
+      "get": {
+        "tags": [
+          "Courses"
+        ],
+        "operationId": "Courses_GetStudentsCount",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/VwCourseStudentCount"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Courses/StudentsCount/{id}": {
+      "get": {
+        "tags": [
+          "Courses"
+        ],
+        "operationId": "Courses_GetStudentsCountById",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/VwCourseStudentCount"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Departments": {
+      "get": {
+        "tags": [
+          "Departments"
+        ],
+        "operationId": "Departments_GetDepartmentAll",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Department"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Departments"
+        ],
+        "operationId": "Departments_PostDepartment",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "department",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Department"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Department"
+            }
+          }
+        }
+      }
+    },
+    "/api/Departments/{id}": {
+      "get": {
+        "tags": [
+          "Departments"
+        ],
+        "operationId": "Departments_GetDepartment",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Department"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Departments"
+        ],
+        "operationId": "Departments_PutDepartment",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          },
+          {
+            "name": "department",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Department"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Departments"
+        ],
+        "operationId": "Departments_DeleteDepartment",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Department"
+            }
+          }
+        }
+      }
+    },
+    "/api/Departments/CourseCount": {
+      "get": {
+        "tags": [
+          "Departments"
+        ],
+        "operationId": "Departments_GetCourseCount",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/VwDepartmentCourseCount"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Departments/CourseCount/{id}": {
+      "get": {
+        "tags": [
+          "Departments"
+        ],
+        "operationId": "Departments_GetCourseCountById",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/VwDepartmentCourseCount"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Enrollments": {
+      "get": {
+        "tags": [
+          "Enrollments"
+        ],
+        "operationId": "Enrollments_GetEnrollmentAll",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Enrollment"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Enrollments"
+        ],
+        "operationId": "Enrollments_PostEnrollment",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "enrollment",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Enrollment"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Enrollment"
+            }
+          }
+        }
+      }
+    },
+    "/api/Enrollments/{id}": {
+      "get": {
+        "tags": [
+          "Enrollments"
+        ],
+        "operationId": "Enrollments_GetEnrollment",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Enrollment"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Enrollments"
+        ],
+        "operationId": "Enrollments_PutEnrollment",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          },
+          {
+            "name": "enrollment",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Enrollment"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Enrollments"
+        ],
+        "operationId": "Enrollments_DeleteEnrollment",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Enrollment"
+            }
+          }
+        }
+      }
+    },
+    "/api/OfficeAssignments": {
+      "get": {
+        "tags": [
+          "OfficeAssignments"
+        ],
+        "operationId": "OfficeAssignments_GetOfficeAssignmentAll",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/OfficeAssignment"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "OfficeAssignments"
+        ],
+        "operationId": "OfficeAssignments_PostOfficeAssignment",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "officeAssignment",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OfficeAssignment"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/OfficeAssignment"
+            }
+          }
+        }
+      }
+    },
+    "/api/OfficeAssignments/{id}": {
+      "get": {
+        "tags": [
+          "OfficeAssignments"
+        ],
+        "operationId": "OfficeAssignments_GetOfficeAssignment",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/OfficeAssignment"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "OfficeAssignments"
+        ],
+        "operationId": "OfficeAssignments_PutOfficeAssignment",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          },
+          {
+            "name": "officeAssignment",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OfficeAssignment"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "OfficeAssignments"
+        ],
+        "operationId": "OfficeAssignments_DeleteOfficeAssignment",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/OfficeAssignment"
+            }
+          }
+        }
+      }
+    },
+    "/api/People": {
+      "get": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "People_GetPersonAll",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Person"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "People_PostPerson",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "person",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Person"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Person"
+            }
+          }
+        }
+      }
+    },
+    "/api/People/{id}": {
+      "get": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "People_GetPerson",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Person"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "People_PutPerson",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          },
+          {
+            "name": "person",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Person"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "People_DeletePerson",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Person"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CourseInstructor": {
+      "type": "object",
+      "required": [
+        "courseId",
+        "instructorId"
+      ],
+      "properties": {
+        "courseId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "instructorId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "course": {
+          "$ref": "#/definitions/Course"
+        },
+        "instructor": {
+          "$ref": "#/definitions/Person"
+        }
+      }
+    },
+    "Course": {
+      "type": "object",
+      "required": [
+        "courseId",
+        "credits",
+        "departmentId",
+        "dateModified",
+        "isDeleted"
+      ],
+      "properties": {
+        "courseId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 50,
+          "minLength": 0
+        },
+        "credits": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "departmentId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "department": {
+          "$ref": "#/definitions/Department"
+        },
+        "courseInstructor": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CourseInstructor"
+          }
+        },
+        "enrollment": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Enrollment"
+          }
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "isDeleted": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Department": {
+      "type": "object",
+      "required": [
+        "departmentId",
+        "budget",
+        "startDate",
+        "rowVersion",
+        "dateModified",
+        "isDeleted"
+      ],
+      "properties": {
+        "departmentId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 50,
+          "minLength": 0
+        },
+        "budget": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "instructorId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "rowVersion": {
+          "type": "string",
+          "format": "byte",
+          "minLength": 1
+        },
+        "instructor": {
+          "$ref": "#/definitions/Person"
+        },
+        "course": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Course"
+          }
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "isDeleted": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Person": {
+      "type": "object",
+      "required": [
+        "id",
+        "lastName",
+        "firstName",
+        "discriminator",
+        "dateModified",
+        "isDeleted"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "lastName": {
+          "type": "string",
+          "maxLength": 50,
+          "minLength": 0
+        },
+        "firstName": {
+          "type": "string",
+          "maxLength": 50,
+          "minLength": 0
+        },
+        "hireDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "enrollmentDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "discriminator": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 0
+        },
+        "officeAssignment": {
+          "$ref": "#/definitions/OfficeAssignment"
+        },
+        "courseInstructor": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CourseInstructor"
+          }
+        },
+        "department": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Department"
+          }
+        },
+        "enrollment": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Enrollment"
+          }
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "isDeleted": {
+          "type": "boolean"
+        }
+      }
+    },
+    "OfficeAssignment": {
+      "type": "object",
+      "required": [
+        "instructorId"
+      ],
+      "properties": {
+        "instructorId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "location": {
+          "type": "string",
+          "maxLength": 50,
+          "minLength": 0
+        },
+        "instructor": {
+          "$ref": "#/definitions/Person"
+        }
+      }
+    },
+    "Enrollment": {
+      "type": "object",
+      "required": [
+        "enrollmentId",
+        "courseId",
+        "studentId"
+      ],
+      "properties": {
+        "enrollmentId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "courseId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "studentId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "grade": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "course": {
+          "$ref": "#/definitions/Course"
+        },
+        "student": {
+          "$ref": "#/definitions/Person"
+        }
+      }
+    },
+    "VwCourseStudents": {
+      "type": "object",
+      "required": [
+        "courseId"
+      ],
+      "properties": {
+        "departmentId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "departmentName": {
+          "type": "string",
+          "maxLength": 50,
+          "minLength": 0
+        },
+        "courseId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "courseTitle": {
+          "type": "string",
+          "maxLength": 50,
+          "minLength": 0
+        },
+        "studentId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "studentName": {
+          "type": "string",
+          "maxLength": 101,
+          "minLength": 0
+        }
+      }
+    },
+    "VwCourseStudentCount": {
+      "type": "object",
+      "required": [
+        "courseId"
+      ],
+      "properties": {
+        "departmentId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 50,
+          "minLength": 0
+        },
+        "courseId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 50,
+          "minLength": 0
+        },
+        "studentCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "VwDepartmentCourseCount": {
+      "type": "object",
+      "required": [
+        "departmentId"
+      ],
+      "properties": {
+        "departmentId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 50,
+          "minLength": 0
+        },
+        "courseCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    }
+  }
+}
