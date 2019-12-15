@@ -1,6 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+      <!-- Class-1215: 練習使用 user-secrets -->
+    <UserSecretsId>92a79810-90cf-4cbb-b540-b674414d20e7</UserSecretsId>
   </PropertyGroup>
   <!-- Class-1215: 練習安裝與設定 Serilog 與 Seq 進行記錄管理 -->
   <ItemGroup>
