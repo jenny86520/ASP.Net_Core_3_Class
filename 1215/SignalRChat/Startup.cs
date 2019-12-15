@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SignalRChat.Hubs;
 
 namespace SignalRChat
 {
@@ -24,6 +25,8 @@ namespace SignalRChat
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            /** 使用 SignalR 建立簡易聊天室 */
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +52,8 @@ namespace SignalRChat
 
             app.UseEndpoints(endpoints =>
             {
+                /** 使用 SignalR 建立簡易聊天室 */
+                endpoints.MapHub<ChatHub>("/chatHub");
                 endpoints.MapRazorPages();
             });
         }
